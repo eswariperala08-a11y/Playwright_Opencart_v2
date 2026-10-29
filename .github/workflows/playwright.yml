@@ -68,7 +68,7 @@ jobs:
         shell: bash
         env:
           CI: "1"
-          TEST_SUITE: ${{ inputs.test_suite || 'test:e2e' }}
+          TEST_SUITE: ${{ inputs.test_suite || 'test:sanity' }}
           BROWSER: ${{ inputs.browser || 'chromium' }}
           MODE: ${{ inputs.mode || 'headless' }}
         run: |
