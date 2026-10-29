@@ -23,7 +23,7 @@ on:
           - test:api
           - test:web
           - test:datadriven
-        default: "test:sanity"
+        default: "test:end-to-end"
       browser:
         description: "Select browser"
         type: choice
@@ -68,7 +68,7 @@ jobs:
         shell: bash
         env:
           CI: "1"
-          TEST_SUITE: ${{ inputs.test_suite || 'test:sanity' }}
+          TEST_SUITE: ${{ inputs.test_suite || 'test:end-to-end' }}
           BROWSER: ${{ inputs.browser || 'chromium' }}
           MODE: ${{ inputs.mode || 'headless' }}
         run: |
